@@ -87,7 +87,7 @@ catch (Exception $erreurs) {
                 }
             }
 
-            
+           ?> <button onclick="CalculIMC()">IMC</button> <?php
 
 
     ?>
@@ -111,45 +111,9 @@ catch (Exception $erreurs) {
 
     <?php // Début du PHP
 
-    //Gestion de l'inscription
-    if(isset($_POST['username'])&& isset($_POST['password']) && isset($_POST['password2']))
-	{
-		if($_POST['password'] == $_POST['password2'])
-		{
-            try
-			{
-				$usernameformulaire = $_POST['username'];
-				$testusernamebase = $Base->query('SELECT pseudo from user where pseudo="'.$usernameformulaire.'"');
+    
+  
 
-				while($pseudobase=$testusernamebase->fetch())
-				{
-					echo $pseudobase["pseudo"];
-				}
-				
-			}
-			catch(Exception $erreur)
-			{
-				?> <p> erreur </p> <?php
-			}
-			
-			if($usernameformulaire!=$pseudobase["pseudo"])
-			{
-				$flag = 1; //valeur qui nous indiquera si le pseudo est en base ou non, si flag existe et vaut 1 alors on peut envoyer le mdp et le username dans la base pour en faire un nouvel utilisateur
-			}
-
-			if($flag==1) //alors on peut tout rentrer en base
-			{
-				$_SESSION['imc'];
-				$_SESSION['username']=$_POST['username'];
-				$_SESSION['password']=$_POST['password'];
-	
-			}
-			else
-			{
-				?><div class="erreur"><p>Le mot de passe doit être identique</p></div> <?php
-        }
-    }
-    }
 ?>
 <script src="javascript.js"></script>
 </body>
