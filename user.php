@@ -3,6 +3,7 @@
 class user{
 
     //Propiétés
+    private $_idprog;
     private $_IdUser;
     private $_Pseudo;
     private $_Mdp;
@@ -20,7 +21,7 @@ class user{
 
     public function connect($idprog,$pseudo,$mdp,$Base)
     {
-        $Base->query('INSERT INTO user (id_programme,pseudo,motdepasse) VALUES ("'.$idprog.'","'.$nom.'","'.$mdp.'")'); //insertion d'une nouvelle ligne dans la bdd
+        $Base->query('INSERT INTO user (id_programme,pseudo,motdepasse) VALUES ("'.$idprog.'","'.$pseudo.'","'.$mdp.'")'); //insertion d'une nouvelle ligne dans la bdd
     }
 
     public function getIdUser(){
