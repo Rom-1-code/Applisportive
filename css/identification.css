@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+.form1 {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.form2 {
+    margin-left: 10px;
+}
+
+.erreur {
+    margin-left: 10px;
+    color: red;
+}
+
+label {
+    display: block;
+    width: 190px;
+    float: left;
+}
