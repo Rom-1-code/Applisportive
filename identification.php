@@ -90,6 +90,8 @@ catch (Exception $erreurs) {
         </form>
     </div>
 
+    <button onclick="CalculIMC()">IMC</button>
+
     <?php // Début du PHP
 
     //Gestion de l'inscription
@@ -132,3 +134,6 @@ catch (Exception $erreurs) {
     }
     }
 ?>
+<script src="javascript.js"></script>
+</body>
+</html>
