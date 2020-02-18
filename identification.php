@@ -2,6 +2,7 @@
 <?php require("user.php"); ?>
 
 <?php
+
 try {
     $Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8', 'root', '');
 }
@@ -75,6 +76,22 @@ catch (Exception $erreurs) {
         </form>
         <p></p>
     </div>
+
+    <?php
+            if(isset($_POST['username'])&& isset($_POST['password']) && isset($_POST['password2']))
+            {
+                if($_POST['password'] == $_POST['password2'])
+                {
+                    $user1 = new user($_POST['username'],$_POST['password']); //les mots de passe sont corrects, on crée l'objet user
+
+                }
+            }
+
+            
+
+
+    ?>
+
     <!-- Formulaire de connexion -->
     <div class="form2">
         <h2>Connexion</h2>

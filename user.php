@@ -9,24 +9,18 @@ class user{
     
     //Construc
 
-    public function __construct($_IdUser,$_Pseudo,$_Mdp)
+    public function __construct($_Pseudo,$_Mdp)
     {
-        $this->_IdUser = $_IdUser;
+    
         $this->_Ipseudo = $_Pseudo;
         $this->_Mdp = $_Mdp; 
     }
 
     //Methodes
 
-    public function PDO(){
-        try
-		{
-			$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','');
-		}
-		catch(Exception $erreur)
-		{
-			echo "accès à la base impossible";
-        }
+    public function connect($idprog,$pseudo,$mdp,$Base)
+    {
+        $Base->query('INSERT INTO user (id_programme,pseudo,motdepasse) VALUES ("'.$idprog.'","'.$nom.'","'.$mdp.'")'); //insertion d'une nouvelle ligne dans la bdd
     }
 
     public function getIdUser(){
